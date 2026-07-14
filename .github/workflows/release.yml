@@ -33,7 +33,7 @@ jobs:
         run: |
           New-Item -ItemType Directory -Path package | Out-Null
           Copy-Item dist/CockpitCommander.exe package/
-          Copy-Item README.md, ABOUT.md, icon.ico package/
+          Copy-Item README.md, icon.ico package/
           Compress-Archive -Path package/* -DestinationPath "CockpitCommander-${{ github.ref_name }}-windows.zip"
 
       - name: Публикация релиза
