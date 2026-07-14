@@ -1,15 +1,11 @@
 name: Release
 
-# Релиз запускается пушем тега вида v1.2.3:
-#   git tag v3.1.0
-#   git push origin v3.1.0
-
 on:
   push:
     tags: ["v*"]
 
 permissions:
-  contents: write   # нужно для создания релиза
+  contents: write
 
 jobs:
   build-windows:
@@ -30,7 +26,7 @@ jobs:
       - name: Сборка exe
         run: >
           pyinstaller --onefile --noconsole --name CockpitCommander
-          --icon icon.ico --add-data "icon.ico;." cockpit_commander.py
+          --icon icon.ico --add-data "icon.ico;." cockpit_audio_commander.py
 
       - name: Упаковка архива
         shell: pwsh

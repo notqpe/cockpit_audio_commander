@@ -16,9 +16,9 @@ jobs:
           python-version: "3.13"
 
       - name: Проверка синтаксиса
-        run: python -m py_compile cockpit_commander.py
+        run: python -m py_compile cockpit_audio_commander.py
 
       - name: Статический анализ
         run: |
           pip install pyflakes
-          python -m pyflakes cockpit_commander.py
+          python -m pyflakes cockpit_audio_commander.py
